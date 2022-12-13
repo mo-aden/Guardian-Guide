@@ -24,7 +24,7 @@ Task.init(
       allowNull: true,
     },
     due_date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     family_id: {
