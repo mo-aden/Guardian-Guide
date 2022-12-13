@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const userRoutes = require("./household.js");
+const userRoutes = require("./dashboard.js");
 
-router.use("/household", userRoutes);
+router.use("/dashboard", userRoutes);
 
 module.exports = router;
