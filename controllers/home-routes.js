@@ -30,7 +30,6 @@ router.get("/dashboard/:id", async (req, res) => {
   });
 
   res.json(dbFamilyData);
-  console.log(dbFamilyData[0].dataValues.id);
 });
 
 module.exports = router;
