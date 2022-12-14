@@ -1,16 +1,35 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Family, Task } = require("../models");
 
 // .com/
 // If logged in
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   // If the user is logged in, redirect to the household dashboard
   if (req.session.loggedIn) {
-    res.redirect("/dashboard");
+    res.redirect("/dashboard/:id");
     return;
   }
   // Stay on page if not
   res.render("/");
+});
+
+// .com/dashboard/:id
+router.get("/dashboard/:id", async (req, res) => {
+  // Find family by user id
+  const dbFamilyData = await Family.findAll({
+    where: {
+      user_id: req.params.id,
+    },
+    // And their assigned tasks
+    include: [
+      {
+        model: Task,
+        attributes: ["name", "category", "description", "due_date"],
+      },
+    ],
+  });
+
+  res.json(dbFamilyData);
 });
 
 module.exports = router;
