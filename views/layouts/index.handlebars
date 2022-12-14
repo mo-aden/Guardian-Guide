@@ -1,0 +1,70 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guardian Guide</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./materialize.css" />
+  </head>
+
+  <body>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/signup">Sign Up</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    {{! WRITE CODE FOR LOGIN/LOGOUT & SIGNUP HERE }}
+{{#if logged_in}}
+<a href="/dashboard">Dashboard</a>
+<button class="no-button" id="logout">Logout</button>
+{{else}}
+<a href="/login">login</a>
+{{/if}}
+
+
+    <main>
+
+      {{{body}}}
+
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Contributors</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Britt Boyd</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Benjamin Cha</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Mohamed Aden</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Ryan Larson</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Ryan Sheridan</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+  ></script>
+
+{{!-- double check if this is correct --}}
+  {{#if logged_in}}
+  <script src="js/logout.js"></script>
+</html>
+
+{{! add script js for logging out here }}

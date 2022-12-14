@@ -1,0 +1,65 @@
+nav {
+  color: black;
+  background-color: #1a237e;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+  padding-right: 2rem;
+}
+
+nav .brand-logo {
+  padding-left: 2rem;
+  color: white;
+}
+
+nav ul a {
+  color: white;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  background-color: white;
+  flex: 1 0 auto;
+}
+
+.input-field > label {
+  color: black;
+}
+
+input[type="text"]:not(.browser-default),
+input[type="email"]:not(.browser-default),
+input[type="password"]:not(.browser-default) {
+  border-bottom: 1px solid #90a4ae;
+  box-shadow: 0 1px 0 0 #90a4ae;
+}
+
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="email"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid #1a237e;
+  box-shadow: 0 1px 0 0 #1a237e;
+}
+
+input[type="text"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="email"]:not(.browser-default):focus:not([readonly]) + label,
+input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
+  color: #1a237e;
+}
+
+.btn {
+  background-color: #1a237e;
+}
+
+.btn:hover {
+  background-color: #304ffe;
+}
+
+.page-footer {
+  background-color: #1a237e;
+  color: white;
+}
