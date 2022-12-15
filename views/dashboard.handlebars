@@ -18,9 +18,11 @@
       <label for="date">Filter by date</label>
     </div>
     <div class="col s6 m3 offset-m2">
-      <a class="waves-effect waves-light btn"><i
-          class="small material-icons left"
-        >add_circle</i>Create new task</a>
+      <a
+        class="waves-effect waves-light btn"
+        id="create-button"
+        href="/dashboard/{{id.user_id}}/new"
+      ><i class="small material-icons left">add_circle</i>Create new task</a>
     </div>
   </div>
 
@@ -115,4 +117,4 @@
 
 </div>
 
-<script src="./js/dashboard.js"></script>
+<script src="/js/dashboard.js"></script>

@@ -59,7 +59,11 @@ router.get("/dashboard/:id", async (req, res) => {
     };
     tasks.push(obj);
   });
-  res.render("dashboard", { family_member, tasks });
+  const id = {
+    user_id: req.params.id,
+  };
+  console.log(id);
+  res.render("dashboard", { family_member, tasks, id });
 });
 
 router.get("/dashboard/:id/new", async (req, res) => {

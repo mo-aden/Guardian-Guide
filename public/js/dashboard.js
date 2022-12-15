@@ -25,4 +25,25 @@ const logoutHandler = async function () {
   }
 };
 
+const sendToNewTask = async () => {
+  const idResponse = await fetch("/api/users", {
+    method: "GET",
+  });
+
+  const data = await idResponse.json();
+
+  const index = data.findIndex((el) => {
+    if (el.username === usernameEl.value) return true;
+  });
+
+  const id = data[index].id;
+
+  if (idResponse.ok) {
+    document.location.replace(`/dashboard/${id}/new`);
+  } else {
+    alert("Failed to sign up");
+  }
+};
+
+document.querySelector("#create-button").addEventListener("click", newTaskPage);
 document.querySelector("#logout-link").addEventListener("click", logoutHandler);
