@@ -1,1 +1,92 @@
+{{!-- Member Icons --}}
+<ul class="collection" id="member-icons">
+    {{#each family_member}}
+        <li class="collection-item">
+            <span class="title">{{this.name}}</span>
+        </li>
+    {{/each}}
+</ul>
+
+{{!-- To-do Lists --}}
+{{!-- To-Dos --}}
+<div class="row">
+    <div class="col s12 m6">
+        <h2>To-Dos</h2>
+        <div class="card">
+            {{#each family_member.tasks as |task|}}
+                {{#if this.category="To-Do"}}
+                    {{#if this.due_date="Date"}}
+                        <li class="card-content collection-item">
+                            <span class="badge">{{task.due_date}}</span>
+                            {{task.name}}<br>
+                            {{family_member.name}}
+                        </li>
+                    {{/if}}
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+{{!-- Chores --}}
+<div class="row">
+    <div class="col s12 m6">
+        <h2>Chore</h2>
+        <div class="card">
+            {{#each family_member.tasks as |task|}}
+                {{#if this.category="Chore"}}
+                    {{#if this.due_date="Date"}}
+                        <li class="card-content collection-item">
+                            <span class="badge">{{task.due_date}}</span>
+                            {{task.name}}<br>
+                            {{family_member.name}}
+                        </li>
+                    {{/if}}
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+{{!-- Appointments --}}
+<div class="row">
+    <div class="col s12 m6">
+        <h2>Appointments</h2>
+        <div class="card">
+            {{#each family_member.tasks as |task|}}
+                {{#if this.category="Appointment"}}
+                    {{#if this.due_date="Date"}}
+                        <li class="card-content collection-item">
+                            <span class="badge">{{task.due_date}}</span>
+                            {{task.name}}<br>
+                            {{family_member.name}}
+                        </li>
+                    {{/if}}
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+{{!-- Events --}}
+<div class="row">
+    <div class="col s12 m6">
+        <h2>Events</h2>
+        <div class="card">
+            {{#each family_member.tasks as |task|}}
+                {{#if this.category="Event"}}
+                    {{#if this.due_date="Date"}}
+                        <li class="card-content collection-item">
+                            <span class="badge">{{task.due_date}}</span>
+                            {{task.name}}<br>
+                            {{family_member.name}}
+                        </li>
+                    {{/if}}
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
 <script src="./js/dashboard.js"></script>
