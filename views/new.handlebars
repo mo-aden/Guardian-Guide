@@ -1,63 +1,63 @@
 <div class="row">
-        <div class="col s12 m6 offset-m3">
-            <div class="card indigo lighten-1">
-                <div class="card-content black-text">
-                    <div class="card-header">
-                    <h3>Create a new task</h2>
-                    </div>
-                    <div class="row">
-                        <form class="col s12" id="new-todo-form">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="task" type="text" class="validate" />
-                                    <label for="task">Task</label>
-                                </div>
+    <div class="col s12 m6 offset-m3">
+        <div class="card indigo lighten-1">
+            <div class="card-content black-text">
+                <div class="card-header">
+                <h3>Create a new task</h2>
+                </div>
+                <div class="row">
+                    <form class="col s12" id="new-task-form">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="name" type="text" class="validate" />
+                                <label for="name">Task</label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <select>
-                                        <option value="" disabled selected>Choose category</option>
-                                        <option value="">Category 1</option>
-                                        <option value="">Category 2</option>
-                                        <option value="">Category 3</option>
-                                        <option value="">Category 4</option>
-                                    </select>
-                                    <label>Category</label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="category">
+                                    <option value="" disabled selected>Choose category</option>
+                                    <option value="To-Do">To-Do</option>
+                                    <option value="Chore">Chore</option>
+                                    <option value="Appointment">Appointment</option>
+                                    <option value="Event">Event</option>
+                                </select>
+                                <label>Category</label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="description" type="text" class="validate" />
-                                    <label for="description">Description</label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="description" type="text" class="validate" />
+                                <label for="description">Description</label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input id="date" type="text" class="datepicker">
-                                    <label for="date">Due date</label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="date" type="text" class="datepicker">
+                                <label for="date">Due date</label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <select>
-                                        <option value="" disabled selected>Assign to person</option>
-                                        {{#each family_member}}
-                                            <option value={{family_member.id}}>{{family_member.name}}</option>
-                                        {{/each}}
-                                    </select>
-                                    <label>Assign to</label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="family-id">
+                                    <option value="" disabled selected>Assign to person</option>
+                                    {{#each family_member}}
+                                        <option value={{this.id}}>{{this.name}}</option>
+                                    {{/each}}
+                                </select>
+                                <label>Assign to</label>
                             </div>
-                            <div class="row">
-                                <button class="btn waves-effect waves-light" type="submit" name="action">
-                                    Create task
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="row">
+                            <button class="btn waves-effect waves-light" type="submit" name="action">
+                                Create task
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-<script src="./js/new.js"></script>
+<script src="/js/new.js"></script>

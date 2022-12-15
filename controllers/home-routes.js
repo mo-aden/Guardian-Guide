@@ -32,4 +32,23 @@ router.get("/dashboard/:id", async (req, res) => {
   res.json(dbFamilyData);
 });
 
+router.get("/dashboard/:id/new", async (req, res) => {
+  const dbFamilyData = await Family.findAll({
+    where: {
+      user_id: req.params.id,
+    },
+  });
+
+  const family_member = [];
+  dbFamilyData.forEach((el) => {
+    const obj = {
+      name: el.name,
+      id: el.id,
+    };
+    family_member.push(obj);
+  });
+
+  res.render("new", { family_member });
+});
+
 module.exports = router;
