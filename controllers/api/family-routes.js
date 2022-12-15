@@ -3,12 +3,12 @@ const { User, Family, Task } = require("../../models");
 
 // .com/api/family
 // Add a family member in a user
-router.post("/", async (req, res) => {
+router.post("/:id", async (req, res) => {
   try {
     // Create new member
     const dbFamilyData = await Family.create({
       name: req.body.name,
-      user_id: req.session.user_id,
+      user_id: req.params.id,
     });
     res.status(200).json(dbFamilyData);
   } catch (err) {
