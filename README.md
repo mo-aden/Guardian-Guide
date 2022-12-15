@@ -14,3 +14,17 @@ SO that I can easily keep track of them without having to go to different apps.
 - THEN I am presented with the login/sign up forms
 - WHEN I am logged in
 - THEN i am able to create new tasks and see all my saved tasks
+
+### Deployed Application ⤵️
+
+[Guardian Guide App]
+
+### Developers
+
+- name1
+- name2
+- name3
+- name3
+- name4
+
+### Screenshots ⤵️
