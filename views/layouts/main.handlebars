@@ -8,39 +8,29 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/style.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
     ></script>
-
   </head>
 
   <body>
-
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Logo</a>
+        <a href="#" class="brand-logo">Guardian Guide</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/signup">Sign Up</a></li>
-
-          <li><a href="/logout">Logout</a></li>
+          {{! <li><a href="/logout">Logout</a></li> }}
         </ul>
       </div>
     </nav>
 
-    {{! WRITE CODE FOR LOGIN/LOGOUT & SIGNUP HERE }}
-    {{!-- {{#if logged_in}}
-<a href="/dashboard">Dashboard</a>
-<button class="no-button" id="logout">Logout</button>
-{{else}}
-<a href="/login">login</a>
-{{/if}} --}}
-
     <main>
-
       {{{body}}}
-
     </main>
 
     <footer class="page-footer">
@@ -65,9 +55,4 @@
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
   ></script>
-
-  {{! double check if this is correct }}
-  {{!-- {{#if logged_in}}
-  <script src="js/logout.js"></script> --}}
-
 </html>

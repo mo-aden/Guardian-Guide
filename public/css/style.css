@@ -1,3 +1,10 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* navbar */
 nav {
   color: black;
   background-color: #1a237e;
@@ -16,17 +23,18 @@ nav ul a {
   color: white;
 }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
 main {
   background-color: white;
   flex: 1 0 auto;
 }
 
+#homepage {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Signup form */
 .input-field > label {
   color: black;
 }
@@ -59,15 +67,10 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
   background-color: #304ffe;
 }
 
-.page-footer {
-  background-color: #1a237e;
-  color: white;
-}
-
-
 /* New task form */
 /* Dropdown */
-.dropdown-content li>a, .dropdown-content li>span {
+.dropdown-content li > a,
+.dropdown-content li > span {
   color: #1a237e;
 }
 
@@ -86,7 +89,7 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
 
 .datepicker-table td.is-selected {
   background-color: #304ffe;
-  color: white;   
+  color: white;
 }
 
 .datepicker-cancel,
@@ -94,3 +97,61 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
   color: #304ffe;
 }
 
+/* Dashboard */
+.collection {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding-top: 10px;
+  flex-direction: row;
+}
+
+.collection-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.listitems {
+  flex-direction: column;
+  display: flex;
+  padding-top: 20px;
+  justify-content: start;
+  width: 400px;
+  height: 200px;
+}
+
+#taskmain {
+  display: flex;
+  justify-content: center;
+  margin-left: 100px;
+  color: white;
+}
+
+.white-text {
+  height: 20px;
+  width: 50px;
+}
+
+.card-panel {
+  display: flex;
+  justify-content: center;
+}
+
+/* Footer */
+.page-footer {
+  background-color: #1a237e;
+  color: white;
+}
+
+/* // @media #{$medium-and-down} {
+//   #homepage {
+//     flex-direction: column;
+//   }
+// }
+
+// @media #{$small-and-down} {
+//   nav .brand-logo {
+//     font-size: 1rem;
+//   }
+// } */

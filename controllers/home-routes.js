@@ -10,6 +10,10 @@ router.get("/", async (req, res) => {
     return;
   }
   // Stay on page if not
+  res.render("homepage");
+});
+
+router.get("/signup", async (req, res) => {
   res.render("signup");
 });
 
@@ -24,12 +28,37 @@ router.get("/dashboard/:id", async (req, res) => {
     include: [
       {
         model: Task,
-        attributes: ["name", "category", "description", "due_date"],
+        attributes: [
+          "name",
+          "category",
+          "description",
+          "due_date",
+          "family_id",
+        ],
       },
     ],
   });
 
-  res.json(dbFamilyData);
+  const family_member = [];
+  const tasks = [];
+  dbFamilyData.forEach((el) => {
+    const obj = {
+      member_name: el.dataValues.name,
+      id: el.dataValues.id,
+      task_name: el.dataValues.tasks[0].dataValues.name,
+      category: el.dataValues.tasks[0].dataValues.category,
+      description: el.dataValues.tasks[0].dataValues.description,
+      due_date: el.dataValues.tasks[0].dataValues.due_date,
+    };
+    family_member.push(obj);
+  });
+
+  const id = {
+    user_id: req.params.id,
+  };
+  console.log(id);
+  res.render("dashboard", { family_member, tasks, id });
+
 });
 
 router.get("/dashboard/:id/new", async (req, res) => {
