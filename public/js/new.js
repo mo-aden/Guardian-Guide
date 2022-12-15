@@ -1,4 +1,4 @@
-const newTaskHandler = async function(event) {
+const newTaskHandler = async function (event) {
   event.preventDefault();
 
   const name = document.querySelector("#name");
@@ -8,31 +8,33 @@ const newTaskHandler = async function(event) {
   const familyId = document.querySelector("#family-id");
 
   await fetch(`/api/task`, {
-      method: 'POST',
-      body: JSON.stringify({
-          name: name.value,
-          category: category.value,
-          description: description.value,
-          due_date: date.value,
-          family_id: familyId.value,
-      }),
-      headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    body: JSON.stringify({
+      name: name.value,
+      category: category.value,
+      description: description.value,
+      due_date: date.value,
+      family_id: familyId.value,
+    }),
+    headers: { "Content-Type": "application/json" },
   });
 
   if (response.ok) {
-      document.location.replace('/dashboard');
+    document.location.replace("/dashboard");
   } else {
-      alert('Failed to create task');
+    alert("Failed to create task");
   }
 };
 
-document.querySelector("#new-task-form").addEventListener("submit", newTaskHandler);
+document
+  .querySelector("#new-task-form")
+  .addEventListener("submit", newTaskHandler);
 
-$(document).ready(function(){
-  $('select').formSelect();
+$(document).ready(function () {
+  $("select").formSelect();
 });
 
 // Date picker
-$(document).ready(function(){
-  $('.datepicker').datepicker();
+$(document).ready(function () {
+  $(".datepicker").datepicker();
 });

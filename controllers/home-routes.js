@@ -10,6 +10,10 @@ router.get("/", async (req, res) => {
     return;
   }
   // Stay on page if not
+  res.render("homepage");
+});
+
+router.get("/signup", async (req, res) => {
   res.render("signup");
 });
 
@@ -49,7 +53,12 @@ router.get("/dashboard/:id", async (req, res) => {
     family_member.push(obj);
   });
 
-  res.render("dashboard", { family_member });
+  const id = {
+    user_id: req.params.id,
+  };
+  console.log(id);
+  res.render("dashboard", { family_member, tasks, id });
+
 });
 
 router.get("/dashboard/:id/new", async (req, res) => {
