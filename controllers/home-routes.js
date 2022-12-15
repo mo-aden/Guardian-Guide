@@ -43,27 +43,22 @@ router.get("/dashboard/:id", async (req, res) => {
   const tasks = [];
   dbFamilyData.forEach((el) => {
     const obj = {
-      name: el.dataValues.name,
+      member_name: el.dataValues.name,
       id: el.dataValues.id,
+      task_name: el.dataValues.tasks[0].dataValues.name,
+      category: el.dataValues.tasks[0].dataValues.category,
+      description: el.dataValues.tasks[0].dataValues.description,
+      due_date: el.dataValues.tasks[0].dataValues.due_date,
     };
     family_member.push(obj);
   });
 
-  dbFamilyData.forEach((el) => {
-    const obj = {
-      name: el.dataValues.tasks[0].dataValues.name,
-      category: el.dataValues.tasks[0].dataValues.category,
-      description: el.dataValues.tasks[0].dataValues.description,
-      due_date: el.dataValues.tasks[0].dataValues.due_date,
-      family_id: el.dataValues.tasks[0].dataValues.family_id,
-    };
-    tasks.push(obj);
-  });
   const id = {
     user_id: req.params.id,
   };
   console.log(id);
   res.render("dashboard", { family_member, tasks, id });
+
 });
 
 router.get("/dashboard/:id/new", async (req, res) => {
