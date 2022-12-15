@@ -21,10 +21,10 @@ SO that I can easily keep track of them without having to go to different apps.
 
 ### Developers
 
-- name1
-- name2
-- name3
-- name3
-- name4
+- Brit Boyd
+- Benjamin Cha
+- Mohamed Aden
+- Ryan Larson
+- Ryan Sheridan
 
 ### Screenshots ⤵️
