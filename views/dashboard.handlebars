@@ -1,1 +1,118 @@
+<div class="container">
+    {{! Member Icons }}
+    <div class="row">
+        <ul class="collection col s12 m8 offset-m2" id="member-icons">
+        {{#each family_member}}
+            <li class="collection-item avatar">
+            <img src="avatar.png" alt="avatar image" class="circle"/>
+            <span class="title">{{this.name}}</span>
+            </li>
+        {{/each}}
+        </ul>
+    </div>
+
+    {{!-- Datepicker & New task button --}}
+    <div class="row">
+        <div class="input-field col s6 m3 offset-m2">
+            <input id="date" type="text" class="datepicker">
+            <label for="date">Filter by date</label>
+        </div>
+        <div class="col s6 m3 offset-m2">
+            <a class="waves-effect waves-light btn"><i class="small material-icons left">add_circle</i>Create new task</a>
+        </div>
+    </div>
+
+    {{! To-do Lists }}
+    {{! To-Dos }}
+    <div id="taskmain">
+        <div class="row">
+            <div class="col s12 m5">
+                <div class="card-panel teal">
+                    <h2>To-dos</h2>
+                    <ul class="listitems">
+                        {{#each tasks as |task|}}
+                            {{#if (filterCategory task.category "To-do")}}
+                            {{!-- {{#if task.due_date="Date"}} --}}
+                            <li class="card-content collection-item">
+                                <span class="badge">{{task.due_date}}</span>
+                                {{task.name}}<br/>
+                                {{family_member.name}}
+                            </li>
+                            {{!-- {{/if}} --}}
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {{! Chores }}
+        <div class="row">
+            <div class="col s12 m5 offset-m1">
+                <div class="card-panel teal">
+                    <h2>Chores</h2>
+                    <ul class="listitems">
+                        {{#each tasks as |task|}}
+                            {{#if (filterCategory task.category "Chore")}}
+                            {{!-- {{#if task.due_date="Date"}} --}}
+                            <li class="card-content collection-item">
+                                <span class="badge">{{task.due_date}}</span>
+                                {{task.name}}<br/>
+                                {{family_member.name}}
+                            </li>
+                            {{!-- {{/if}} --}}
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {{! Appointments }}
+        <div class="row">
+            <div class="col s12 m5">
+                <div class="card-panel teal">
+                    <h2>Appointments</h2>
+                    <ul class="listitems">
+                        {{#each tasks as |task|}}
+                            {{#if (filterCategory task.category "Appointment")}}
+                            {{!-- {{#if task.due_date="Date"}} --}}
+                            <li class="card-content collection-item">
+                                <span class="badge">{{task.due_date}}</span>
+                                {{task.name}}<br/>
+                                {{family_member.name}}
+                            </li>
+                            {{!-- {{/if}} --}}
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {{! Events }}
+        <div class="row">
+            <div class="col s12 m5 offset-m1">
+                <div class="card-panel teal">
+                    <h2>Events</h2>
+                    <ul class="listitems">
+                        {{#each tasks as |task|}}
+                            {{#if (filterCategory task.category "Event")}}
+                            {{!-- {{#if task.due_date="Date"}} --}}
+                            <li class="card-content collection-item">
+                                <span class="badge">{{task.due_date}}</span>
+                                {{task.name}}<br/>
+                                {{family_member.name}}
+                            </li>
+                            {{!-- {{/if}} --}}
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 <script src="./js/dashboard.js"></script>
