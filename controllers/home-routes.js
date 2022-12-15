@@ -40,7 +40,7 @@ router.get("/dashboard/:id", async (req, res) => {
   });
 
   const family_member = [];
-  const tasks = [];
+
   dbFamilyData.forEach((el) => {
     const obj = {
       member_name: el.dataValues.name,
@@ -56,9 +56,8 @@ router.get("/dashboard/:id", async (req, res) => {
   const id = {
     user_id: req.params.id,
   };
-  console.log(id);
-  res.render("dashboard", { family_member, tasks, id });
 
+  res.render("dashboard", { family_member, id });
 });
 
 router.get("/dashboard/:id/new", async (req, res) => {
