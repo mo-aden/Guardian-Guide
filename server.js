@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 const sess = {
   secret: "Super secret secret",
   cookie: {
-    maxAge: 60 * 60 * 1000,
+    maxAge: 60 * 1000,
     httpOnly: true,
     secure: false,
     sameSite: "strict",
@@ -40,7 +40,5 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () =>
-    console.log(`Server JS listening to http://localhost:${PORT}`)
-  );
+  app.listen(PORT, () => console.log(`Server JS listening to http://localhost:${PORT}`));
 });
