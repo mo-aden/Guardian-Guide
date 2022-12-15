@@ -29,7 +29,16 @@ router.get("/dashboard/:id", async (req, res) => {
     ],
   });
 
-  res.json(dbFamilyData);
+  const family_member = [];
+  dbFamilyData.forEach((el) => {
+    const obj = {
+      name: el.dataValues.name,
+      id: el.dataValues.id,
+    };
+    family_member.push(obj);
+  });
+
+  res.render("dashboard", { family_member });
 });
 
 router.get("/dashboard/:id/new", async (req, res) => {
