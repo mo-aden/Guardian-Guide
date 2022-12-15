@@ -15,8 +15,20 @@ const signupFormHandler = async function (event) {
     headers: { "Content-Type": "application/json" },
   });
 
+  const idResponse = await fetch("/api/users", {
+    method: "GET",
+  });
+
+  const data = await idResponse.json();
+
+  const index = data.findIndex((el) => {
+    if (el.username === usernameEl.value) return true;
+  });
+
+  const id = data[index].id;
+
   if (response.ok) {
-    document.location.replace(`/dashboard`);
+    document.location.replace(`/dashboard/${id}`);
   } else {
     alert("Failed to sign up");
   }
