@@ -6,7 +6,7 @@ const { User, Family, Task } = require("../models");
 router.get("/", async (req, res) => {
   // If the user is logged in, redirect to the household dashboard
   if (req.session.loggedIn) {
-    res.redirect("/dashboard/:id");
+    res.redirect(`/dashboard/${req.session.user_id}`);
     return;
   }
   // Stay on page if not

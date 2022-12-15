@@ -26,8 +26,10 @@ router.post("/login", async (req, res) => {
       return;
     }
     // Give user set "loggedIn" to true
-    // req.session.save(() => {
-    //   req.session.loggedIn = true;
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+    });
 
     res
       .status(200)
@@ -59,9 +61,11 @@ router.post("/", async (req, res) => {
       password: req.body.password,
     });
 
-    // Add 'loggedIn' variable set to `true`
+    // Add 'loggedIn' variable set to 'true'
+    // Add user_id to grab for url
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.user_id = dbUserData.dataValues.id;
 
       res.status(200).json(dbUserData);
     });

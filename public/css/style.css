@@ -64,6 +64,7 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
   color: white;
 }
 
+
 /* New task form */
 /* Dropdown */
 .dropdown-content li>a, .dropdown-content li>span {
@@ -92,3 +93,4 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
 .datepicker-done {
   color: #304ffe;
 }
+
