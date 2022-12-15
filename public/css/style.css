@@ -4,8 +4,6 @@ body {
   flex-direction: column;
 }
 
-
-
 /* navbar */
 nav {
   color: black;
@@ -25,22 +23,16 @@ nav ul a {
   color: white;
 }
 
-
-
 main {
   background-color: white;
   flex: 1 0 auto;
 }
 
-
-
-/* Footer */
-.page-footer {
-  background-color: #1a237e;
-  color: white;
+#homepage {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
-
-
 
 /* Signup form */
 .input-field > label {
@@ -75,11 +67,10 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
   background-color: #304ffe;
 }
 
-
-
 /* New task form */
 /* Dropdown */
-.dropdown-content li>a, .dropdown-content li>span {
+.dropdown-content li > a,
+.dropdown-content li > span {
   color: #1a237e;
 }
 
@@ -98,15 +89,13 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
 
 .datepicker-table td.is-selected {
   background-color: #304ffe;
-  color: white;   
+  color: white;
 }
 
 .datepicker-cancel,
 .datepicker-done {
   color: #304ffe;
 }
-
-
 
 /* Dashboard */
 .collection {
@@ -148,3 +137,21 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
   display: flex;
   justify-content: center;
 }
+
+/* Footer */
+.page-footer {
+  background-color: #1a237e;
+  color: white;
+}
+
+/* // @media #{$medium-and-down} {
+//   #homepage {
+//     flex-direction: column;
+//   }
+// }
+
+// @media #{$small-and-down} {
+//   nav .brand-logo {
+//     font-size: 1rem;
+//   }
+// } */
