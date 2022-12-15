@@ -75,4 +75,10 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.get("/", async (req, res) => {
+  const dbUserData = await User.findAll();
+
+  res.status(200).json(dbUserData);
+});
+
 module.exports = router;
