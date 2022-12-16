@@ -1,14 +1,12 @@
-// Filter tasks by member
-// const memberHandler = async function() {
-
-// }
-
-// document.querySelector("#member-icons").addEventListener("click", memberHandler);
+// Navbar
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+});
 
 // Filter tasks by date
 // Datepicker
-$(document).ready(function () {
-  $(".datepicker").datepicker();
+$(document).ready(function(){
+    $('.datepicker').datepicker();
 });
 
 // Logout link

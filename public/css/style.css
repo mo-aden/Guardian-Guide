@@ -1,10 +1,4 @@
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-/* navbar */
+/* Navbar */
 nav {
   color: black;
   background-color: #1a237e;
@@ -20,19 +14,30 @@ nav .brand-logo {
 }
 
 nav ul a {
+color: white;
+}
+
+
+
+/* Footer */
+.page-footer {
+  background-color: #1a237e;
   color: white;
 }
 
+.center-align span {
+  font-size: 2rem;
+}
+
+
+
+/* Main content */
 main {
   background-color: white;
   flex: 1 0 auto;
 }
 
-#homepage {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-}
+
 
 /* Signup form */
 .input-field > label {
@@ -41,7 +46,10 @@ main {
 
 input[type="text"]:not(.browser-default),
 input[type="email"]:not(.browser-default),
-input[type="password"]:not(.browser-default) {
+input[type="password"]:not(.browser-default),
+input.valid[type=text]:not(.browser-default),
+input.valid[type=email]:not(.browser-default),
+input.valid[type=password]:not(.browser-default) {
   border-bottom: 1px solid #90a4ae;
   box-shadow: 0 1px 0 0 #90a4ae;
 }
@@ -67,10 +75,11 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
   background-color: #304ffe;
 }
 
+
+
 /* New task form */
 /* Dropdown */
-.dropdown-content li > a,
-.dropdown-content li > span {
+.dropdown-content li>a, .dropdown-content li>span {
   color: #1a237e;
 }
 
@@ -89,7 +98,7 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
 
 .datepicker-table td.is-selected {
   background-color: #304ffe;
-  color: white;
+  color: white;   
 }
 
 .datepicker-cancel,
@@ -97,28 +106,33 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
   color: #304ffe;
 }
 
+
+
 /* Dashboard */
-.collection {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  padding-top: 10px;
-  flex-direction: row;
-}
-
-.collection-item {
+.avatar-collection {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
 }
 
-.listitems {
-  flex-direction: column;
-  display: flex;
-  padding-top: 20px;
-  justify-content: start;
-  width: 400px;
-  height: 200px;
+.collection .collection-item.avatar {
+  min-height: 64px;
+}
+
+.collection.with-header .collection-header {
+  background-color: #9fa8da;
+}
+
+.collection .custom-li {
+  background-color: #c5cae9;
+  font-size: 1.2rem;
+}
+
+.task-member {
+  padding-left: 2rem;
+  font-size: 1rem;
 }
 
 #taskmain {
@@ -138,20 +152,14 @@ input[type="password"]:not(.browser-default):focus:not([readonly]) + label {
   justify-content: center;
 }
 
-/* Footer */
-.page-footer {
-  background-color: #1a237e;
-  color: white;
+
+
+/* Media queries */
+@media screen and (max-width: 600px) {
+  .avatar-collection {
+      flex-direction: column;
+  }
+  #navbar {
+      flex-direction: column;
+  }
 }
-
-/* // @media #{$medium-and-down} {
-//   #homepage {
-//     flex-direction: column;
-//   }
-// }
-
-// @media #{$small-and-down} {
-//   nav .brand-logo {
-//     font-size: 1rem;
-//   }
-// } */
