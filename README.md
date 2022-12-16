@@ -17,7 +17,7 @@ SO that I can easily keep track of them without having to go to different apps.
 
 ### Deployed Application ⤵️
 
-[Guardian Guide App]
+[Guardian Guide App](https://guardian-guide-1222.herokuapp.com/)
 
 ### Developers
 
