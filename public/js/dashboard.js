@@ -1,12 +1,14 @@
 // Navbar
-$(document).ready(function(){
-    $('.sidenav').sidenav();
+$(document).ready(function () {
+  $(".sidenav").sidenav();
 });
 
 // Filter tasks by date
 // Datepicker
-$(document).ready(function(){
-    $('.datepicker').datepicker();
+$(document).ready(function () {
+  $(".datepicker").datepicker({
+    format: "yyyy-mm-dd",
+  });
 });
 
 // Logout link
