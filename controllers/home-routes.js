@@ -39,25 +39,46 @@ router.get("/dashboard/:id", async (req, res) => {
     ],
   });
 
+  const family_icons = [];
   const family_member = [];
-
   dbFamilyData.forEach((el) => {
     const obj = {
       member_name: el.dataValues.name,
-      id: el.dataValues.id,
-      task_name: el.dataValues.tasks[0].dataValues.name,
-      category: el.dataValues.tasks[0].dataValues.category,
-      description: el.dataValues.tasks[0].dataValues.description,
-      due_date: el.dataValues.tasks[0].dataValues.due_date,
     };
-    family_member.push(obj);
+    family_icons.push(obj);
+  });
+
+  dbFamilyData.forEach((el) => {
+    if (el.dataValues.tasks.length <= 1) {
+      const obj = {
+        member_name: el.dataValues.name,
+        id: el.dataValues.id,
+        task_name: el.dataValues.tasks[0].dataValues.name,
+        category: el.dataValues.tasks[0].dataValues.category,
+        description: el.dataValues.tasks[0].dataValues.description,
+        due_date: el.dataValues.tasks[0].dataValues.due_date,
+      };
+      family_member.push(obj);
+    } else {
+      for (let i = 0; i < el.dataValues.tasks.length; i++) {
+        const obj2 = {
+          member_name: el.dataValues.name,
+          id: el.dataValues.id,
+          task_name: el.dataValues.tasks[i].dataValues.name,
+          category: el.dataValues.tasks[i].dataValues.category,
+          description: el.dataValues.tasks[i].dataValues.description,
+          due_date: el.dataValues.tasks[i].dataValues.due_date,
+        };
+        family_member.push(obj2);
+      }
+    }
   });
 
   const id = {
     user_id: req.params.id,
   };
 
-  res.render("dashboard", { family_member, id });
+  res.render("dashboard", { family_member, family_icons, id });
 });
 
 router.get("/dashboard/:id/new", async (req, res) => {

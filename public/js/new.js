@@ -7,7 +7,7 @@ const newTaskHandler = async function (event) {
   const date = document.querySelector("#date");
   const familyId = document.querySelector("#family-id");
 
-  await fetch(`/api/task`, {
+  const response = await fetch(`/api/task`, {
     method: "POST",
     body: JSON.stringify({
       name: name.value,
@@ -20,7 +20,7 @@ const newTaskHandler = async function (event) {
   });
 
   if (response.ok) {
-    document.location.replace("/dashboard");
+    document.location.replace("./");
   } else {
     alert("Failed to create task");
   }
@@ -36,5 +36,7 @@ $(document).ready(function () {
 
 // Date picker
 $(document).ready(function () {
-  $(".datepicker").datepicker();
+  $(".datepicker").datepicker({
+    format: "yyyy-mm-dd",
+  });
 });
