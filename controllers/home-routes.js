@@ -38,7 +38,7 @@ router.get("/dashboard/:id", async (req, res) => {
       },
     ],
   });
-
+  console.log(dbFamilyData);
   const family_member = [];
 
   dbFamilyData.forEach((el) => {
