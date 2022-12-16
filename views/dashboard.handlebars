@@ -1,26 +1,26 @@
 <div class="container">
   {{! Member Icons }}
   <div class="row">
-    <ul class="collection col s12 m8 offset-m2" id="member-icons">
-      {{#each family_member}}
+    <ul
+      class="collection avatar-collection col s8 offset-s2 m8 offset-m2"
+      id="member-icons"
+    >
+      {{#each family_icons}}
         <li class="collection-item avatar">
-
           <img src="/images/avatar.png" alt="avatar image" class="circle" />
           <span class="title">{{this.member_name}}</span>
-
         </li>
       {{/each}}
     </ul>
   </div>
 
   {{! Datepicker & New task button }}
-  <div class="row">
-    <div class="input-field col s6 m3 offset-m2">
+  <div class="row valign-wrapper">
+    <div class="input-field col s4 offset-s1 m3 offset-m2">
       <input id="date" type="text" class="datepicker" />
       <label for="date">Filter by date</label>
-
     </div>
-    <div class="col s6 m3 offset-m2">
+    <div class="col s4 offset-s2 m3 offset-m2">
       <a
         class="waves-effect waves-light btn"
         id="create-button"
@@ -31,97 +31,71 @@
   </div>
 
   {{! To-do Lists }}
-  {{! To-Dos }}
-  <div id="taskmain">
-    <div class="row">
-      <div class="col s12 m5">
-        <div class="card-panel teal">
-
-          <h2>To-dos</h2>
-          <ul class="listitems">
-            {{#each family_member as |task|}}
-              {{#if (filterCategory task.category "To-do")}}
-                {{!-- {{#if task.due_date="Date"}} --}}
-                <li class="card-content collection-item">
-                  <span class="badge">{{task.due_date}}</span>
-
-                  {{task.task_name}}<br />
-                  {{task.member_name}}
-                </li>
-                {{!-- {{/if}} --}}
-              {{/if}}
-            {{/each}}
-          </ul>
-        </div>
-      </div>
-
+  <div class="row">
+    {{! To-Dos }}
+    <div class="col s12 m6">
+      <ul class="collection with-header">
+        <li class="collection-header custom-header"><h5>To-dos</h5></li>
+        {{#each family_member as |task|}}
+          {{#if (filterCategory task.category "To-do")}}
+            <li class="collection-item custom-li">
+              <span class="badge">Due {{task.due_date}}</span>
+              {{task.task_name}}<br />
+              <span class="task-member">{{task.member_name}}</span>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
     </div>
 
     {{! Chores }}
-    <div class="row">
-      <div class="col s12 m5 offset-m1">
-        <div class="card-panel teal">
-          <h2>Chores</h2>
-          <ul class="listitems">
-
-            {{#each family_member as |task|}}
-              {{#if (filterCategory task.category "Chore")}}
-                {{!-- {{#if task.due_date="Date"}} --}}
-                <li class="card-content collection-item">
-                  <span class="badge">{{task.due_date}}</span>
-                  {{task.task_name}}<br />
-                  {{task.member_name}}
-                </li>
-                {{!-- {{/if}} --}}
-              {{/if}}
-            {{/each}}
-          </ul>
-        </div>
-      </div>
+    <div class="col s12 m6">
+      <ul class="collection with-header">
+        <li class="collection-header custom-header"><h5>Chores</h5></li>
+        {{#each family_member as |task|}}
+          {{#if (filterCategory task.category "Chore")}}
+            <li class="collection-item custom-li">
+              <span class="badge">Due {{task.due_date}}</span>
+              {{task.task_name}}<br />
+              <span class="task-member">{{task.member_name}}</span>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
     </div>
+  </div>
 
+  <div class="row">
     {{! Appointments }}
-    <div class="row">
-      <div class="col s12 m5">
-        <div class="card-panel teal">
-          <h2>Appointments</h2>
-          <ul class="listitems">
-            {{#each family_member as |task|}}
-              {{#if (filterCategory task.category "Appointment")}}
-                {{!-- {{#if task.due_date="Date"}} --}}
-                <li class="card-content collection-item">
-                  <span class="badge">{{task.due_date}}</span>
-                  {{task.task_name}}<br />
-                  {{task.member_name}}
-                </li>
-                {{!-- {{/if}} --}}
-              {{/if}}
-            {{/each}}
-          </ul>
-        </div>
-      </div>
+    <div class="col s12 m6">
+      <ul class="collection with-header">
+        <li class="collection-header custom-header"><h5>Appointments</h5></li>
+        {{#each family_member as |task|}}
+          {{#if (filterCategory task.category "Appointment")}}
+            <li class="collection-item custom-li">
+              <span class="badge">Due {{task.due_date}}</span>
+              {{task.task_name}}<br />
+              <span class="task-member">{{task.member_name}}</span>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
     </div>
 
     {{! Events }}
-    <div class="row">
-      <div class="col s12 m5 offset-m1">
-        <div class="card-panel teal">
-          <h2>Events</h2>
-          <ul class="listitems">
-            {{#each family_member as |task|}}
-              {{#if (filterCategory task.category "Event")}}
-                {{!-- {{#if task.due_date="Date"}} --}}
-                <li class="card-content collection-item">
-                  <span class="badge">{{task.due_date}}</span>
-                  {{task.task_name}}<br />
-                  {{task.member_name}}
-                </li>
-                {{!-- {{/if}} --}}
-              {{/if}}
-            {{/each}}
-          </ul>
-        </div>
-      </div>
+    <div class="col s12 m6">
+      <ul class="collection with-header">
+        <li class="collection-header custom-header"><h5>Events</h5></li>
+        {{#each family_member as |task|}}
+          {{#if (filterCategory task.category "Event")}}
+            <li class="collection-item custom-li">
+              <span class="badge">Due {{task.due_date}}</span>
+              {{task.task_name}}<br />
+              <span class="task-member">{{task.member_name}}</span>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
     </div>
   </div>
 

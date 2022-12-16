@@ -19,12 +19,15 @@
   </head>
 
   <body>
-    <nav>
-      <div class="nav-wrapper">
+    <nav class="row">
+      <div class="nav-wrapper col s12">
         <a href="#" class="brand-logo">Guardian Guide</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+            class="material-icons"
+          >menu</i></a>
+        <ul class="right hide-on-med-and-down">
           <li><a href="/signup">Sign Up</a></li>
-          {{! <li><a href="/logout">Logout</a></li> }}
+          <li><a id="logout-link">Logout</a></li>
         </ul>
       </div>
     </nav>
@@ -36,16 +39,29 @@
     <footer class="page-footer">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Contributors</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Britt Boyd</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Benjamin Cha</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Mohamed Aden</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Ryan Larson</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Ryan Sheridan</a></li>
+          <div class="col s12 m6 offset-m3 center-align">
+            <span>Contributors</span>
+            <ul class="">
+              <li><a
+                  class="grey-text text-lighten-3"
+                  href="https://github.com/thatthembritt"
+                >Britt Boyd</a></li>
+              <li><a
+                  class="grey-text text-lighten-3"
+                  href="https://github.com/bencha27"
+                >Benjamin Cha</a></li>
+              <li><a
+                  class="grey-text text-lighten-3"
+                  href="https://github.com/mo-aden"
+                >Mohamed Aden</a></li>
+              <li><a
+                  class="grey-text text-lighten-3"
+                  href="https://github.com/larsonrj"
+                >Ryan Larson</a></li>
+              <li><a
+                  class="grey-text text-lighten-3"
+                  href="https://github.com/rsheridan613"
+                >Ryan Sheridan</a></li>
             </ul>
           </div>
         </div>
